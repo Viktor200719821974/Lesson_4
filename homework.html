@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4 HomeWork</title>
+</head>
+<body>
+<script >
+    // 1 створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+    // створити пустий масив, наповнити його 10 об'єктами User
+
+    class User {
+        constructor(id, name, surname, email, phone) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.phone = phone;
+        }
+    }
+    let users = [
+        new User( 1 , 'Viktor', 'Myronenko', 'viktor2003@gmail.com', '+3809923453456'),
+        new User( 2 , 'Oleg', 'Byrolenko', 'oleg2009@gmail.com', '+380994545454'),
+        new User( 3 , 'Anna', 'Konenko', 'anna1234@gmail.com', '+380994858448'),
+        new User( 4 , 'Viktorya', 'Mashko', 'viktoryatjghj@gmail.com', '+380995548848'),
+        new User( 5 , 'Ivan', 'Goncharenko', 'ivan2003@gmail.com', '+380994144848'),
+        new User( 6 , 'Tatyana', 'Mushko', 'tatyanaghrhr2003@gmail.com', '+380994848446'),
+        new User( 7 , 'Ira', 'Revkina', 'iraooko@gmail.com', '+380954884484'),
+        new User( 8 , 'Sergiy', 'Antonov', 'jghitjthikgh@gmail.com', '+380637896452'),
+        new User( 9 , 'Yana', 'Nerkova', 'fullio@gmail.com', '+380955625146'),
+        new User( 10 , 'Olya', 'Kovalenko', 'hhrt66@gmail.com', '+380665623415')
+    ]
+    console.log(users) ;
+</script>
+<script>
+
+    // 2 створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+    // створити пустий масив, наповнити його 10 об'єктами Client
+
+    class Client {
+        constructor(id,name,surname,email,phone,order) {
+            this.id = id;
+            this.name = name;
+            this.surname =surname;
+            this.email = email;
+            this.phone = phone;
+            this.order = order;
+        }
+    }
+    let payClient1 = ['milk', 'bread', 'water'];
+    let payClient2 = ['milk', 'fruits', 'cofee','chocolate'];
+    let payClient3 = ['milk', 'bread', 'water','apple','sugar'];
+    let payClient4 = ['milk', 'bread', 'water','wisky','orange','juice'];
+    let payClient5 = ['milk', 'bread','fruits', 'water'];
+    let payClient6 = ['milk', 'bread'];
+    let payClient7 = [ 'water'];
+    let payClient8 = ['milk', 'bread', 'water','cheese','chocolate','wine','wodka',];
+    let payClient9 = ['milk','wodka','orange', 'bread', 'water'];
+    let payClient10 = ['milk', 'bread', 'water','chocolate','sugar'];
+
+    let clients = [
+        new Client( 1 , 'Viktor', 'Myronenko', 'viktor2003@gmail.com', '+3809923453456', `${payClient1}`),
+        new Client( 2 , 'Oleg', 'Byrolenko', 'oleg2009@gmail.com', '+380994545454',`${payClient2}`),
+        new Client( 3 , 'Anna', 'Konenko', 'anna1234@gmail.com', '+380994858448',`${payClient3}`),
+        new Client( 4 , 'Viktorya', 'Mashko', 'viktoryatjghj@gmail.com', '+380995548848',`${payClient4}`),
+        new Client( 5 , 'Ivan', 'Goncharenko', 'ivan2003@gmail.com', '+380994144848',`${payClient5}`),
+        new Client( 6 , 'Tatyana', 'Mushko', 'tatyanaghrhr2003@gmail.com', '+380994848446',`${payClient6}`),
+        new Client( 7 , 'Ira', 'Revkina', 'iraooko@gmail.com', '+380954884484',`${payClient7}`),
+        new Client( 8 , 'Sergiy', 'Antonov', 'jghitjthikgh@gmail.com', '+380637896452',`${payClient8}`),
+        new Client( 9 , 'Yana', 'Nerkova', 'fullio@gmail.com', '+380955625146',`${payClient9}`),
+        new Client( 10 , 'Olya', 'Kovalenko', 'hhrt66@gmail.com', '+380665623415',`${payClient10}`)
+    ]
+
+    console.log(clients);
+</script>
+<script >
+
+    // 3 Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль "їдемо зі швидкістю {максимальна швидкість} на годину"
+    // -- info () - яка виводить всю інформацію про автомобіль
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+    // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
+
+    class Car {
+        constructor(model,producer,year,maxspeed,volumeEngine) {
+            this.model = model;
+            this.producer = producer;
+            this.year = year;
+            this.maxspeed = maxspeed;
+            this.volumeEngine = volumeEngine;
+        }
+        drive() {
+            console.log(`"їдемо зі швидкістю ${this.maxspeed} на годину"`);
+        }
+        info() {
+            console.log(`
+                model: ${this.model}
+             producer: ${this.producer}
+                 year: ${this.year}
+             maxspeed: ${this.maxspeed}
+         volumeEngine: ${this.volumeEngine}`);
+        }
+        increaseMaxSpeed(newSpeed){
+            this.maxspeed += newSpeed;
+        }
+        changeYear(newValue){
+            this.year = newValue;
+        }
+        addDriver(driver) {
+            this.driver = driver;
+        }
+    }
+    const opel = new Car ('Combo','Opel',2005, 145, 1.3);
+
+    opel.increaseMaxSpeed(34);
+    opel.changeYear(2020);
+    opel.addDriver({name: 'Viktor'});
+    opel.drive();
+    opel.info()
+</script>
+
+<script >
+
+    // 5 Взяти масив з завдання 1.
+    // - Відфільтрувати , залишивши тільки об'єкти з парними id
+    // - Відсортувати його по id. по зростанню
+    // - Відсортувати його по id. по спаданню
+
+    users.sort(function (user1,user2){
+        return user1.id - user2.id;
+    });
+    console.log(users);
+
+    users.sort(function (user1,user2){
+        return user2.id - user1.id;
+    });
+    console.log(users);
+
+    let filter = users.filter(function (user){
+        return user.id % 2 === 0;
+    });
+    console.log(filter);
+</script>
+<script >
+
+    // <!--6. Взяти масив з завдання 2.-->
+    // <!--Відсортувати його по кількості товарів в полі order. по спаданню-->
+
+    clients.sort(function (a, b) {
+        return b.order.length - a.order.length;
+    })
+    console.log(clients);
+
+</script>
+</body>
+</html>
